@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Example</title>
+        {% else %}
+        <title>Welcome to Flask Example</title>
+        {% endif %}
+    </head>
+    <body>
+        <div>Example: <a href="/index">Home</a></div>
+        <hr>
+        {% block content %}{% endblock%}
+    </body>
 </html>
