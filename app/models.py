@@ -8,4 +8,7 @@ class User(db.Model):
     password_hash = db.Column(db.String(128))
 
     def __repr__(self):
-        return "User(username= {}, email={})gs".format(self.username, self.email)
+        return "User(username={}, email={})".format(self.username, self.email)
+
+    def __str__(self):
+        return "{} - {}".format(self.username, self.email)
