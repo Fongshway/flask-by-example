@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
         {% if title %}
         <title>{{ title }} - Example</title>
         {% else %}
@@ -15,6 +14,15 @@
             <a href="/login">Login</a>
         </div>
         <hr>
-        {% block content %}{% endblock%}
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
     </body>
 </html>
