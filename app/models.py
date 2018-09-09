@@ -1,3 +1,4 @@
+from builtins import repr
 from datetime import datetime
 
 from app import db
@@ -11,7 +12,7 @@ class User(db.Model):
     posts = db.relationship('Post', backref='author', lazy='dynamic')
 
     def __repr__(self):
-        return "User(username={}, email={})".format(self.username, self.email)
+        return "User(username='{}', email='{}')".format(self.username, self.email)
 
     def __str__(self):
         return "{} - {}".format(self.username, self.email)
@@ -24,4 +25,7 @@ class Post(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def __repr__(self):
-        return '<Post {}>'.format(self.body)
+        return "Post(body='{}', author={})".format(self.body, repr(self.author))
+
+    def __str__(self):
+        return "{}".format(self.body)
