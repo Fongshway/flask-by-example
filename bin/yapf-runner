@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+# Runner script for yapf
+
+set -e
+
+function run()
+{
+    yapf $PROJECT_DIR/app $PROJECT_DIR/config.py \
+        --recursive \
+        --diff
+}
+
+run
