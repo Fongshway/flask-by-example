@@ -5,9 +5,12 @@ name = "pypi"
 
 [packages]
 flask = "*"
-flask--wtf = "*"
+flask-migrate = "*"
+flask-sqlalchemy = "*"
+flask-wtf = "*"
 
 [dev-packages]
+pylint = "*"
 pytest = "*"
 yapf = "*"
 
