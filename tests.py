@@ -4,6 +4,7 @@ from app import app, db
 from app.models import User, Post
 
 
+# TODO Convert to use pytest
 class UserModelCase(unittest.TestCase):
     def setUp(self):
         app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite://'
