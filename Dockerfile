@@ -15,7 +15,6 @@ RUN useradd -ms /bin/bash ${USER} && \
 
 # -- Create application directory:
 RUN set -ex && mkdir -p ${PROJECT_DIR}
-
 WORKDIR "${PROJECT_DIR}"
 
 # -- Setup as non-root user
